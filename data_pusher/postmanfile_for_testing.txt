@@ -1,0 +1,105 @@
+POST.................
+http://127.0.0.1:8000/api/accounts/
+
+{
+    "email": "example@example.com",
+    "account_name": "Example Account",
+    "app_secret_token": "your_secret_token_here",
+    "website": "http://example.com"
+}
+
+
+
+OUTPUT.
+
+
+
+{
+    "account_id": "2b12c1be-9203-4694-b844-cb19ae9d7c24",
+    "email": "example@example.com",
+    "account_name": "Example Account",
+    "app_secret_token": "your_secret_token_here",
+    "website": "http://example.com"
+}
+
+GET.................
+http://127.0.0.1:8000/api/accounts/
+OUTPUT
+[
+    {
+        "account_id": "2b12c1be-9203-4694-b844-cb19ae9d7c24",
+        "email": "example@example.com",
+        "account_name": "Example Account",
+        "app_secret_token": "your_secret_token_here",
+        "website": "http://example.com"
+    }
+]
+
+
+
+POST.................
+
+http://127.0.0.1:8000/api/destinations/
+
+{
+    "account_id": "2b12c1be-9203-4694-b844-cb19ae9d7c24",  // Example account ID
+    "url": "http://webhook.example.com",
+    "http_method": "POST",
+    "headers": {
+        "APP_ID": "2b12c1be-9203-4694-b844-cb19ae9d7c24",
+        "APP_SECRET": "your_secret_token_here",
+        "ACTION": "user.update",
+        "Content-Type": "application/json",
+        "Accept": "*/*"
+    }
+}
+
+
+OUTPUT.
+{
+    "id": 1,
+    "account_id": "2b12c1be-9203-4694-b844-cb19ae9d7c24",
+    "url": "http://webhook.example.com",
+    "http_method": "POST",
+    "headers": {
+        "APP_ID": "2b12c1be-9203-4694-b844-cb19ae9d7c24",
+        "APP_SECRET": "your_secret_token_here",
+        "ACTION": "user.update",
+        "Content-Type": "application/json",
+        "Accept": "*/*"
+    }
+}
+
+
+
+GET..............
+http://127.0.0.1:8000/api/destinations/
+[
+    {
+        "id": 1,
+        "account_id": "2b12c1be-9203-4694-b844-cb19ae9d7c24",
+        "url": "http://webhook.example.com",
+        "http_method": "POST",
+        "headers": {
+            "APP_ID": "2b12c1be-9203-4694-b844-cb19ae9d7c24",
+            "APP_SECRET": "your_secret_token_here",
+            "ACTION": "user.update",
+            "Content-Type": "application/json",
+            "Accept": "*/*"
+        }
+    }
+]
+
+
+
+IF U WANT TO DELETE MEANS 
+click delete option 
+destiantion
+http://127.0.0.1:8000/api/destinations/1/
+
+
+if u want to delete the account click delete
+http://127.0.0.1:8000/api/accounts/1/
+
+
+
